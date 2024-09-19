@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Music App</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .main-heading {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 2.5rem;
+        }
+
+        .container {
+            max-width: 2000px;
+            margin: 0 auto;
+            padding: 20px;
+            
+        }
+
+        .music-player {
+            text-align: center;
+            background-color: #8a2be229;
+        }
+
+        .player-heading {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        
+        }
+
+        .artist-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .artists-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            
+        }
+
+        .artist {
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .artist-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .artist h3 {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+
+        .song-list {
+            margin-top: 20px;
+        }
+
+        .additional-text {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.6rem;
+            color:rgba(248, 229, 60, 0.886);
+        }
+    </style>
+</head>
+<body>
+    <h1 class="main-heading">VIBE HEY!</h1>
+    <div class="container">
+        <main>
+            <div class="music-player">
+                <h2 class="player-heading">ARTISTS</h2>
+                <div class="artist-list">
+                    <div class="artists-container">
+                        <div class="artist" data-artist="DARSHAN RAVAL">
+                            <img src="IMAGES/DARSHAN.jpg" class="artist-image">
+                            <h3>DARSHAN RAVAL</h3>
+                        </div>
+                        <div class="artist" data-artist="ANIRUDH RAVICHANDRA">
+                            <img src="IMAGES/anirudh.jpeg" class="artist-image">
+                            <h3>ANIRUDH RAVICHANDRA</h3>
+                        </div>
+                        <div class="artist" data-artist="ARJITH SINGH">
+                            <img src="IMAGES/arjith.jpeg" class="artist-image">
+                            <h3>ARJIT SINGH</h3>
+                        </div>
+                        <div class="artist" data-artist="NEHA KAKKAR">
+                            <img src="IMAGES/N.jpeg" class="artist-image">
+                            <h3>NEHA KAKKAR</h3>
+                        </div>
+                        <div class="artist" data-artist="ARMAN MALIK">
+                            <img src="IMAGES/ARMAN.jpeg" class="artist-image">
+                            <h3>ARMAN MALIK</h3>
+                        </div>
+                        <div class="artist" data-artist="ALKA YAGNIK">
+                            <img src="IMAGES/ALKAA.jpeg" class="artist-image">
+                            <h3>ALKA YAGNIK</h3>
+                        </div>
+                        <div class="artist" data-artist="SHREYA GOSHAL">
+                            <img src="IMAGES/SHREYA.jpeg" class="artist-image">
+                            <h3>SHREYA GOSHAL</h3>
+                        </div>
+                        <div class="artist" data-artist="HONEY SINGH">
+                            <img src="IMAGES/YO YO.jpeg" class="artist-image">
+                            <h3>HONEY SINGH</h3>
+                        </div>
+                        <div class="artist" data-artist="AR RAHMAN">
+                            <img src="IMAGES/AR.jpeg" class="artist-image">
+                            <h3>AR RAHMAN</h3>
+                        </div>
+                        <div class="artist" data-artist="ARUNITA KANJILAL">
+                            <img src="IMAGES/ARUNITA.jpeg" class="artist-image">
+                            <h3>ARUNITA KANJILAL</h3>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="additional-text">
+                    <p><h4>Discover your favorite songs and artists here. Click on an artist to see their songs.</h4></p>
+                </div>
+                
+                <div class="song-list">
+                    <ul id="song-list">
+                        <!-- Songs will be dynamically loaded here -->
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

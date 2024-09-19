@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artists</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles specific to this page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .artist-list {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .artist {
+            text-align: center;
+            margin: 10px;
+            width: 200px;
+            cursor: pointer; /* Make it cursor pointer to indicate it's clickable */
+        }
+
+        .artist-image {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        h3 {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>ARTISTS</h1>
+    <main>
+        <div class="artist-list">
+            <div class="artist" data-artist="DARSHAN RAVAL">
+                <img src="IMAGES/MAHIYE.jpeg" class="artist-image">
+                <h3>DARSHAN RAVAL</h3>
+            </div>
+            <div class="artist" data-artist="ANIRUDH RAVICHANDRA">
+                <img src="IMAGES/obed.jpeg" class="artist-image">
+                <h3>ANIRUDH RAVICHANDRA</h3>
+            </div>
+            <!-- Add more artists here -->
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

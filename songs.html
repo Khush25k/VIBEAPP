@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Songs</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for song list */
+        .song-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .song-list li {
+            margin-bottom: 20px;
+            border: 1px solid pink;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .song-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .song-details {
+            flex: 1;
+        }
+
+        .song-details h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .song-url {
+            font-size: 0.9rem;
+            color: #d411c4;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1 id="artist-name">Songs List</h1>
+        </header>
+        
+        <main>
+            <div class="song-list" id="song-list">
+                <!-- Songs will be dynamically added here -->
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const artistName = params.get('artist');
+
+            if (artistName) {
+                loadSongs(artistName);
+            }
+        });
+
+        function loadSongs(artistName) {
+            const songsData = {
+                "DARSHAN RAVAL": [
+                    { title: "MAHIYE JINHA SONHA", imageUrl: "images/MAHIYE.jpeg", songUrl: "AUDIO/MAHIYE.mp3" },
+                    { title: "CHOGADA THARA", imageUrl: "images/chogada.jpeg", songUrl: "AUDIO/chogada.mp3" },
+                    { title: "TERI AANKHON MEIN", imageUrl: "images/teri aank.jpeg", songUrl: "AUDIO/TERI AANKHON.mp3" },
+                    { title: "KAMARIYA", imageUrl: "images/kam.jpeg", songUrl: "AUDIO/KAMARIYA.mp3" },
+                    { title: "DINDORA BAJA RE", imageUrl: "images/DARSHAN.jpg", songUrl: "AUDIO/DHINDORA.mp3" },
+                ],
+                "ANIRUDH RAVICHANDRA": [
+                    { title: "WHY THIS KOLAVEI DI?", imageUrl: "images/WHY.jpeg", songUrl: "AUDIO/WHY.mp3" },
+                    { title: "HAYODA HAYODA", imageUrl: "images/HAYODA.jpeg", songUrl: "AUDIO/Hayyoda.mp3" },
+                    { title: "VAATHI COMING", imageUrl: "images/vaathi.jpeg", songUrl: "AUDIO/vaathi.mp3" },
+                    { title: "ARABIC KUTHU", imageUrl: "images/AK.jpeg", songUrl: "AUDIO/arabickuthu.mp3" },
+                    { title: "JIMIKI PONNU", imageUrl: "images/JP.jpeg", songUrl: "AUDIO/JP.mp3" },
+            ],
+                "ARJITH SINGH": [
+                    { title: "O MAHI", imageUrl: "images/OMAAHI.jpeg", songUrl: "AUDIO/O MAHI.mp3" },
+                    { title: "TERA YAAR HOON MAIN", imageUrl: "images/TERA.jpeg", songUrl: "AUDIO/TERA1.mp3" },
+                    { title: "CHALEYA", imageUrl: "images/CHALEYA.jpeg", songUrl: "AUDIO/CHALEYA.mp3" },
+                    { title: "LUTT PUT GAYA", imageUrl: "images/LUT.jpeg", songUrl: "AUDIO/LUT.mp3" },
+                    { title: "VE KAMLEYA", imageUrl: "images/VE.jpeg", songUrl: "AUDIO/VE.mp3" },
+            ],
+                "NEHA KAKKAR": [
+                    { title: "LONDON THUMAKDA", imageUrl: "IMAGES/LONDON.jpeg", songUrl: "AUDIO/LONDON.mp3" },
+                    { title: "COCO COLA TU", imageUrl: "IMAGES/CO.jpeg", songUrl: "AUDIO/CO.mp3" },
+                    { title: "BADRI KI DULHANIA", imageUrl: "IMAGES/BADRI.jpeg", songUrl: "AUDIO/badri.mp3" },
+                    { title: "TUKUR TUKUR", imageUrl: "IMAGES/TUK.jpeg", songUrl: "AUDIO/TUK.mp3" },
+                    { title: "KALA CHASHMA", imageUrl: "IMAGES/KALA.jpeg", songUrl: "AUDIO/KALA.mp3" },
+            ],
+                "ARMAN MALIK": [
+                    { title: "HUA HEIN AAJ PEHLI BAAR", imageUrl: "IMAGES/HUA HEY.jpeg", songUrl: "AUDIO/HUA HAIN.mp3" },
+                    { title: "BOL DO NA ZARA", imageUrl: "IMAGES/BOL.jpeg", songUrl: "AUDIO/BOL.mp3" },
+                    { title: "BUM BUM BOLE", imageUrl: "IMAGES/BUM.jpeg", songUrl: "AUDIO/BUM.mp3" },
+                    { title: "CHALE AANA", imageUrl: "IMAGES/CHAL.jpeg", songUrl: "AUDIO/CHAL.mp3" },
+                    { title: "SAB TERA", imageUrl: "IMAGES/SAB.jpeg", songUrl: "AUDIO/SAB.mp3" },
+            ],
+                "ALKA YAGNIK": [
+                    { title: "TUJHKO HE DULHAN BANAUNGA", imageUrl: "IMAGES/TUJH.jpeg", songUrl: "AUDIO/TUJH.mp3" },
+                    { title: "LAAL DUPATTA", imageUrl: "IMAGES/LAAL.jpeg", songUrl: "AUDIO/LAAL.mp3" },
+                    { title: "SAAJAN JI GHAR AAYE", imageUrl: "IMAGES/SAJ.jpeg", songUrl: "AUDIO/SAJ.mp3" },
+                    { title: "AGAR TUM SAATH HO", imageUrl: "IMAGES/AGAR.jpeg", songUrl: "AUDIO/AGAR.mp3" },
+                    { title: "TUM TOH DHOKEBAAZ HO", imageUrl: "IMAGES/TUM.jpeg", songUrl: "AUDIO/TUM.mp3" },
+            ],
+                "SHREYA GOSHAL": [
+                    { title: "ANUKOLEDENADU", imageUrl: "IMAGES/ANU.jpeg", songUrl: "AUDIO/ANU.mp3" },
+                    { title: "VASTUNNA VACCHESTUNNA", imageUrl: "IMAGES/VAS.jpeg", songUrl: "AUDIO/VAS.mp3" },
+                    { title: "PAPA MERE PAPA O", imageUrl: "IMAGES/PAPA.jpeg", songUrl: "AUDIO/PAPA.mp3" },
+                    { title: "TERI MERI", imageUrl: "IMAGES/TERI.jpeg", songUrl: "AUDIO/TERI.mp3" },
+                    { title: "TUM KYA MILE", imageUrl: "IMAGES/KYA.jpeg", songUrl: "AUDIO/KYA.mp3" },
+            ],
+                "HONEY SINGH": [
+                    { title: "Brown Rang", imageUrl: "IMAGES/br.jpeg", songUrl: "AUDIO/br.mp3" },
+                    { title: "Kudiye ni teri", imageUrl: "IMAGES/kud.jpeg", songUrl: "AUDIO/kud.mp3" },
+                    { title: "Blue Eyes", imageUrl: "IMAGES/blue.jpeg", songUrl: "AUDIO/blue.mp3" },
+                    { title: "Love Dose", imageUrl: "IMAGES/love.jpeg", songUrl: "AUDIO/love.mp3" },
+                    { title: "DESI KALAKAR", imageUrl: "IMAGES/desi.jpeg", songUrl: "AUDIO/DESI1.mp3" },
+            ],
+            "AR RAHMAN": [
+                    { title: "RANJHANA", imageUrl: "IMAGES/RAJ.jpeg", songUrl: "AUDIO/RAJ.mp3" },
+                    { title: "VELLIPOMAKEY", imageUrl: "IMAGES/VEL.jpeg", songUrl: "AUDIO/VELO.mp3" },
+                    { title: "MUQABLA", imageUrl: "IMAGES/MUQ.jpeg", songUrl: "AUDIO/MUQ.mp3" },
+                    { title: "BARSO RE", imageUrl: "IMAGES/BAR.jpeg", songUrl: "AUDIO/BAR.mp3" },
+                    { title: "KAISE MUJHE", imageUrl: "IMAGES/KAISE.jpeg", songUrl: "AUDIO/KAISE.mp3" },
+            ],
+            "ARUNITA KANJILAL": [
+                    { title: "TERE BAGAIR", imageUrl: "IMAGES/TERE.jpeg", songUrl: "AUDIO/TERE.mp3" },
+                    { title: "MANZOOR DIL", imageUrl: "IMAGES/MANZOOR.jpeg", songUrl: "AUDIO/MANZOOR.mp3" },
+                    { title: "FURSAT", imageUrl: "IMAGES/FURSAT.jpeg", songUrl: "AUDIO/FURSAT.mp3" },
+                    { title: "TERE NAINA", imageUrl: "IMAGES/TERE NAINA.jpeg", songUrl: "AUDIO/TERE.mp3" },
+                    { title: "O SAIYONNI", imageUrl: "IMAGES/o.jpeg", songUrl: "AUDIO/o.mp3" },
+            ],
+            };
+            const songsList = document.getElementById('song-list');
+            songsList.innerHTML = ''; // Clear previous songs
+
+            if (songsData[artistName]) {
+                songsData[artistName].forEach(song => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `
+                        <img src="${song.imageUrl}" class="song-image">
+                        <div class="song-details">
+                            <h3>${song.title}</h3>
+                            <a href="player.html?songUrl=${encodeURIComponent(song.songUrl)}&songTitle=${encodeURIComponent(song.title)}" class="song-url">Listen to the song</a>
+                        </div>
+                    `;
+                    songsList.appendChild(listItem);
+                });
+            } else {
+                songsList.innerHTML = '<li>No songs found for this artist</li>';
+            }
+        }
+    </script>
+</body>
+</html>
